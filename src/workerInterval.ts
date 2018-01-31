@@ -6,12 +6,23 @@ export interface Work {
   callback: () => void;
 }
 
-export default class WorkerInterval {
+export default (options: { [key: string]: string; } = {}) => class WorkerInterval {
   private works: Work[] = [];
   private readonly worker: Worker;
 
   constructor() {
-    const Worker = require("worker-loader!./worker");
+    let query = "";
+    if (options) {
+      const params = Object
+        .keys(options)
+        .map(key => {
+          return `${key}=${options[key]}`;
+        });
+      if (params.length) {
+        query = `?${params.join('&')}`;
+      }
+    }
+    const Worker = require("worker-loader!./worker" + options);
     this.worker = new Worker();
     this.worker.onmessage = (data) => this.onMessage(data);
   }

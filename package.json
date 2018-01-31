@@ -1,8 +1,8 @@
 {
-  "name": "worker-interval",
-  "version": "1.0.6",
+  "name": "worker-interval-constructor",
+  "version": "1.0.7",
   "description": "setInterval and clearInterval implementation to support keep running on inactive tabs for Chrome, Firefox and IE",
-  "main": "dist/module.js",
+  "main": "dist/workerInterval.js",
   "types": "typings/module.d.ts",
   "keywords": [
     "clearInterval",
@@ -15,23 +15,26 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/gorkemcnr/worker-interval.git"
+    "url": "https://github.com/haxxxton/worker-interval.git"
   },
-  "homepage": "https://github.com/gorkemcnr/worker-worker",
+  "homepage": "https://github.com/haxxxton/worker-worker",
   "author": "Gorkem Cinar",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^8.0.58",
     "@types/uuid": "^3.4.3",
     "gulp": "^3.9.1",
-    "gulp-tslint": "^8.1.2", 
-    "gulp-typescript": "^3.2.3",    
+    "gulp-tslint": "^8.1.2",
+    "gulp-typescript": "^3.2.3",
     "tslint": "^5.8.0",
     "typescript": "^2.6.2",
     "webpack": "^3.10.0"
   },
-  "dependencies": {    
+  "scripts": {
+  	"build": "gulp"
+  },
+  "dependencies": {
     "uuid": "^3.1.0",
-    "worker-loader": "^1.1.0"
-  }  
+    "worker-loader-query": "^1.1.1"
+  }
 }
